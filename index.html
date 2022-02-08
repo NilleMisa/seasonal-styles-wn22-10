@@ -35,6 +35,20 @@
 	display:inline-block;
 	margin-left:5%;
 }
+
+div#myDiv{
+    /*background-color:yellow; */
+}
+
+div#myOtherDiv p {
+    /*background-color:yellow; */
+}
+
+div#yetAnotherDiv li :nth-child(even) {
+    /*background-color:yellow; */
+}
+
+
   </style>
  </head>
  <body>
@@ -63,6 +77,26 @@
             <li>Winter: <b>#005393</b></li>
         </ul>
     </p>
+    <div id="myDiv">This is a div with an ID in myDiv</div>
+    <div id="myOtherDiv">
+            <p>Here's a p tag</p>
+            <p>Here's a p tag</p>
+            <p>Here's a p tag</p>
+            <p>Here's a p tag</p>
+            <p>Here's a p tag</p>
+
+    </div>
+
+    <div id="yetAnotherDiv">
+        <ul>
+            <li>I'm a list item!</li>
+            <li>I'm a list item!</li>
+            <li>I'm a list item!</li>
+            <li>I'm a list item!</li>
+            <li>I'm a list item!</li>
+        </ul>
+
+    </div>
     <p>
     Aesthetic gentrify YOLO McSweeney's typewriter single-origin coffee. Slow-carb hella listicle lomo, Helvetica single-origin coffee butcher stumptown. Chambray try-hard church-key mumblecore, tote bag PBR cardigan. Retro Austin Brooklyn, blog Intelligentsia gentrify jean shorts sartorial bicycle rights gastropub. Aesthetic wayfarers Pitchfork, tattooed Carles quinoa meh leggings distillery pork belly banjo. Umami cred lumbersexual skateboard, pork belly Tumblr vegan letterpress. Fixie bicycle rights butcher chillwave, gluten-free health goth Echo Park locavore whatever.
     <img src="images/300x400.png" alt="Season Wear Goes Here" id="wear" />
@@ -85,5 +119,30 @@
     </footer>
   </main>
   <script src="js/main.js"></script>
+  <script>
+
+       //* Spring: #2B7129
+       // Summer: #EBA52B
+        //Fall: #A81124
+        //Winter: #005393
+        
+
+      $("document").ready(function(){
+        $("li.seasons a").click(funtion(e){
+            e.preventDefault();
+
+            let season = $(this).attr("href");
+
+            $("#logo").attr("src","images/spring.gif");
+            $("#wear").attr("src","images/spring-wear.jpg");
+            $("html").css("background-color")
+
+            alert(season);
+
+            //alert("I'm clicked!");
+        });
+      });
+
+  </script>
   </body>
 </html>
